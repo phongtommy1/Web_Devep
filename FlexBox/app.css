@@ -1,0 +1,74 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+#container {
+    background-color: #003049;
+    width: 90%;
+    height: 200px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+    /* 2 axis: main and cross, main direction of flex=direction is row */
+    display: flex;
+    flex-direction: row;
+    /* where is begins on the axis, control base on direction. Mainly control items of main axis */     
+    justify-content: center;
+    /* controls item on cross axis, where to be place baseline, center, flex-start, flex end   */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* flex-wrap: if stuff are compact */
+    /* align-contes only work when we have flex-wrap */
+    /* align-content: flex-start; */
+
+
+    
+}
+main {
+    width:80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex; 
+}
+
+main .sidebar{
+    background-color: blueviolet;
+    flex-grow: 1;
+}
+
+main .maincontent{
+    background-color: aqua;
+    flex-grow: 2;
+}
+#container div{
+    width: 200px;
+    /* max-width:300px max size to grow*/
+    height: 200px;
+    text-align: center;
+    /* initial size element should be added as  */
+    flex-basis: 200px;
+}
+
+/* div:nth-of-type(3){
+    align-self: flex-end;
+}
+
+div:nth-of-type(2){
+    align-self: center;
+} */
+
+div:nth-of-type(1){
+    /* eats up available space */
+    /* flex: /grow, /shrink */
+    flex-grow: 1 2 300px;
+}
+
+div:nth-of-type(5){
+    /* eats up available space */
+    flex-grow: 2 1 800px;
+}
